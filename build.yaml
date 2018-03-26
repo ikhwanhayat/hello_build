@@ -1,0 +1,17 @@
+#
+# Docs for build.yaml can be found at https://pub.dartlang.org/packages/build_config
+#
+
+targets:
+  $default:
+    builders:
+      "|hello_build":
+
+builders:
+  hello_build:
+    target: $default
+    import: "package:hello_build/builder.dart"
+    builder_factories: ["copyBuilder"]
+    build_to: cache
+    build_extensions:
+      .dart: [".dart.copy"]
